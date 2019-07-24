@@ -17,4 +17,8 @@ gulp.task("javascript", function(){
   return gulp.src("./source/**/*.js").pipe(gulp.dest("./build"));
 });
 
-gulp.task("build", gulp.series("clean", gulp.parallel("html", "css", "javascript")));
+gulp.task("images", function(){
+  return gulp.src(["./source/**/*.png", "./source/**/*.jpg"]).pipe(gulp.dest("./build"));
+});
+
+gulp.task("build", gulp.series("clean", gulp.parallel("html", "css", "javascript", "images")));
