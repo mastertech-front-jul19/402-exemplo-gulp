@@ -1,6 +1,20 @@
 const gulp = require("gulp");
+const clean = require("del");
 
-gulp.task("default", function(finalizar){
-  console.log("Olá, Gulp, como vai?");
-  finalizar();
+gulp.task("clean", function(){
+  return clean("./build");
 });
+
+gulp.task("html", function(){
+  return gulp.src("./source/**/*.html").pipe(gulp.dest("./build"));
+});
+
+gulp.task("css", function(){
+  return gulp.src("./source/**/*.css").pipe(gulp.dest("./build"));
+});
+
+gulp.task("javascript", function(){
+  return gulp.src("./source/**/*.js").pipe(gulp.dest("./build"));
+});
+
+gulp.task("build", gulp.series("clean", gulp.parallel("html", "css", "javascript")));

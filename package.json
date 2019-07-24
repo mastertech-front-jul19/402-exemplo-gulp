@@ -9,6 +9,7 @@
   "author": "Renan Rodrigo <renanrb@ime.usp.br>",
   "license": "ISC",
   "dependencies": {
+    "del": "^5.0.0",
     "gulp": "^4.0.2"
   }
 }
