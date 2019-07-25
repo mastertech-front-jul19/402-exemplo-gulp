@@ -45,3 +45,7 @@ main{
   cursor: pointer;
   border: 5px dotted black;
 }
+
+input::placeholder{
+  color: red;
+}
